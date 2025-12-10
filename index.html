@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fanfik 17 – PAGRIŚ: KRÓL WSZYSTKIEGO</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #0f0005;
+            color: #ff9999;
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.98);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            text-align: center;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+        .overlay h1 {
+            font-size: 5rem;
+            color: #ff3333;
+            text-shadow: 0 0 40px #ff0000;
+            margin-bottom: 50px;
+        }
+        .overlay p {
+            font-size: 2.5rem;
+            margin: 40px 0;
+        }
+        .overlay button {
+            background: #ff3333;
+            color: #000;
+            border: none;
+            padding: 30px 80px;
+            font-size: 2.8rem;
+            cursor: pointer;
+            border-radius: 30px;
+            box-shadow: 0 0 60px #ff0000;
+            transition: all .4s;
+        }
+        .overlay button:hover {
+            background: #ff6666;
+            transform: scale(1.1);
+        }
+        .container {
+            min-height: 100vh;
+            padding: 30px 50px;
+            box-sizing: border-box;
+            display: none;
+        }
+        .container.active {
+            display: block;
+        }
+        h1.main-title {
+            text-align: center;
+            color: #ff5555;
+            text-shadow: 0 0 25px #ff0000;
+            font-size: 4.8rem;
+            margin: 30px 0;
+        }
+        .warning {
+            text-align: center;
+            font-size: 1.7rem;
+            color: #ff7777;
+            margin: 40px 0;
+            padding: 30px;
+            background: #220000;
+            border: 2px dashed #ff3333;
+            border-radius: 20px;
+        }
+        .chapters {
+            text-align: center;
+            margin: 50px 0;
+        }
+        .btn {
+            display: inline-block;
+            background: #330000;
+            color: #ff9999;
+            border: 3px solid #ff5555;
+            padding: 20px 45px;
+            margin: 15px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            border-radius: 15px;
+            transition: all .5s;
+            min-width: 300px;
+        }
+        .btn:hover, .btn.active {
+            background: #ff5555;
+            color: #000;
+            box-shadow: 0 0 40px #ff0000;
+        }
+        .content {
+            display: none;
+            margin: 30px 0;
+        }
+        .active {
+            display: block;
+        }
+        p {
+            line-height: 1.9;
+            margin-bottom: 35px;
+            font-size: 1.5rem;
+        }
+        .blood {
+            color: #ff3366;
+            font-weight: bold;
+            font-size: 3.2rem;
+            text-shadow: 0 0 20px #ff0000;
+            text-align: center;
+            margin: 60px 0;
+        }
+        .final {
+            text-align: center;
+            font-size: 6rem;
+            color: #00ffff;
+            text-shadow: 0 0 250px #00ffff;
+            margin: 100px 0;
+        }
+        .disclaimer {
+            font-size: 1.1em;
+            color: #cc3333;
+            text-align: center;
+            margin-top: 100px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<!-- EKRAN POWITALNY / ŻART -->
+<div class="overlay" id="overlay">
+    <h1>STRONA ZASTRZEŻONA©</h1>
+    <p>ABY ZROBIĆ JAKIKOLWIEK INNY REMAKE<br>PISAĆ NA MAILA: fanfik.kontakt@interia.pl</p>
+    <button onclick="accept()">ZATWIERDZAM REGULAMIN – PRZECHODZĘ DO FANFIKA</button>
+</div>
+
+<!-- ŻARTOBLIWY KOMUNIKAT PO KLIKNIĘCIU -->
+<div class="overlay" id="joke" style="display: none;">
+    <h1>Oczywiście żartowałem!</h1>
+    <p style="font-size: 3rem;">Rób remake jakie chcesz i dowoli – mi to nie przeszkadza!</p>
+    <button onclick="goToFanfik()">WEJDŹ DO FANFIKA</button>
+</div>
+
+<!-- GŁÓWNA TREŚĆ FANFIKA -->
+<div class="container" id="main">
+    <h1 class="main-title">FANFIK 17 – PAGRIŚ: KRÓL WSZYSTKIEGO</h1>
+
+    <p style="text-align: center; font-style: italic; font-size: 1.9rem;">
+        SUPERBOHATER RUCHANIA • PAGRIŚ RUCHA KAŻDEGO W MIEŚCIE • NAJBRUTALNIEJSZY • 5 ULTRA DŁUGICH ROZDZIAŁÓW
+    </p>
+
+    <div class="chapters">
+        <div class="btn active" onclick="show(1)">01 – PRZEJĘCIE MIASTA</div>
+        <div class="btn" onclick="show(2)">02 – PAŁAC KULTURY</div>
+        <div class="btn" onclick="show(3)">03 – METRO APOKALIPSY</div>
+        <div class="btn" onclick="show(4)">04 – STADION NARODOWY</div>
+        <div class="btn" onclick="show(5)">05 – FINAŁ NA WIŚLE</div>
+    </div>
+
+    <!-- ROZDZIAŁ 1 -->
+    <div id="ch1" class="content active">
+        <p class="blood">ROZDZIAŁ 1 – PRZEJĘCIE MIASTA</p>
+        <p>Warszawa, środek nocy. Pagriś – superbohater ruchania – stoi na dachu Pałacu Kultury. Czerwona kurtka rozwiana, kutas 28 cm sterczy jak miecz, oczy świecą jak dwa rubiny. Jest niepokonany, nie do zatrzymania.</p>
+        <p>Za nim armia IronAge: Vipeerek, Gloje (40 cm), Elobelo, K4yez_, Barakuda, Kamix, Dyrektorka, pani Polonistka – wszyscy gotowi na wszystko.</p>
+        <p>Pagriś wydaje rozkaz: „Dziś rżniemy całe miasto. Każdego, kogo napotkamy.”</p>
+        <p>Schodzi na ulice. Pierwszy napotyka taksówkarza – Pagriś wbija się w dupę na środku jezdni, taksówkarz wyje, krew spływa po siedzeniu.</p>
+        <p>Dalej – grupa studentów wracających z imprezy – Pagriś rucha każdego po kolei, Vipeerek i Gloje pomagają – krew i sperma na chodniku.</p>
+        <p>Policja przyjeżdża – Pagriś wbija się w komendanta, Gloje w dwóch policjantów naraz – radiowozy zalane krwią.</p>
+        <p>Rakun (bezdomny przegryw) próbuje uciec przez most – Pagriś łapie go za gardło i wbija 28 cm w dupę – Rakun wyje, krew leje się po asfalcie.</p>
+        <p>Całe miasto pada w 3 godziny – ulice, parki, sklepy – wszędzie krew i sperma. Pagriś rucha każdego, kogo napotka – kobiety, mężczyzn, starych, młodych – nikt nie jest bezpieczny.</p>
+        <p>Warszawa należy do Pagrysia – superbohatera ruchania.</p>
+    </div>
+
+    <!-- ROZDZIAŁ 2 -->
+    <div id="ch2" class="content">
+        <p class="blood">ROZDZIAŁ 2 – PAŁAC KULTURY – TRON PAGRYSIA</p>
+        <p>Pałac Kultury – główna sala. Pagriś siedzi na tronie zrobionym z ciał pokonanych policjantów i taksówkarzy.</p>
+        <p>Pani Polonistka na kolanach – Pagriś wbija się w gardło, Vipeerek w dupę, Gloje w cipkę – potrójna penetracja, jej ciało drży, wielkie cycki podskakują, krew leje się z każdej dziury, wyje z rozkoszy i bólu.</p>
+        <p>Dyrektorka – Elobelo i K4yez_ w niej naraz, jej garsonka w strzępach, krzyki rozchodzą się po sali.</p>
+        <p>Wszyscy rekruci – wielka orgia na scenie, sperma tryska fontannami, krew spływa po schodach.</p>
+        <p>Rakun związany łańcuchami pod tronem – musi lizać buty Pagrysia, wszyscy siusiają na niego, wylewają spermę, smarują krwią – Rakun charczy, oczy pełne łez.</p>
+        <p>Pagriś dochodzi – fontanna spermy zalewa salę, Rakun tonie w niej po kolana.</p>
+        <p>Pagriś rucha kolejnych – ochroniarzy Pałacu, sprzątaczki, turystów, bileterów – każdy, kogo napotka w korytarzach i na balkonach.</p>
+        <p>Cały Pałac staje się świątynią ruchania – ściany ociekają krwią i spermą.</p>
+    </div>
+
+    <!-- ROZDZIAŁ 3 -->
+    <div id="ch3" class="content">
+        <p class="blood">ROZDZIAŁ 3 – METRO APOKALIPSY</p>
+        <p>Metro – wszystkie stacje zalane krwią i spermą, pociągi zatrzymane, światła migoczą.</p>
+        <p>Pagriś prowadzi pociąg – pani Polonistka na kolanach w wagonie – Pagriś, Vipeerek, Gloje w niej naraz, jej ciało drży, krew tryska na szyby, wyje z bólu.</p>
+        <p>Pasażerowie – wszyscy rżnięci przez ekipę – Pagriś przechodzi od wagonu do wagonu, wbija się w każdego, kogo napotka – biznesmenów, studentów, emerytów, matki z dziećmi uciekają, ale nie ma ucieczki.</p>
+        <p>Rakun przywiązany do słupa w wagonie – wszyscy plują na niego, wylewają spermę, krew, siusiają – Rakun charczy, błaga o śmierć.</p>
+        <p>Pagriś kopie go w twarz – zęby wypadają, krew leje się po podłodze.</p>
+        <p>Maszyniści, konduktorzy, sprzątacze – wszyscy rżnięci.</p>
+        <p>Metro staje się piekłem na kółkach – wagony zalane, perony w spermie i krwi.</p>
+    </div>
+
+    <!-- ROZDZIAŁ 4 -->
+    <div id="ch4" class="content">
+        <p class="blood">ROZDZIAŁ 4 – STADION NARODOWY – ARENA MASAKRY</p>
+        <p>Stadion Narodowy – 60 000 miejsc – wszystkie zajęte przez poddanych Pagrysia, kibice, ochrona, sprzedawcy – wszyscy już oddani.</p>
+        <p>Na środku boiska – pani Polonistka związana – Pagriś, Vipeerek, Gloje, Elobelo, K4yez_, Barakuda, Kamix – wszyscy w niej naraz – 7 kutasów, krew tryska fontanną, jej ciało drży w agonii, wielkie cycki podskakują.</p>
+        <p>Pagriś rucha ochroniarzy stadionu, kibiców, sprzedawców hot-dogów, dziennikarzy – każdy, kogo napotka na trybunach i w lożach.</p>
+        <p>Rakun na środku – publiczność rzuca w niego butelkami z spermą i krwią, Pagriś wbija mu but w brzuch – żebra pękają, Rakun wypluwa krew.</p>
+        <p>Stadion drży od jęków i krzyków – murawa zalana krwią i spermą, trybuny ociekają.</p>
+        <p>Pagriś stoi na środku – superbohater ruchania – niepokonany.</p>
+    </div>
+
+    <!-- ROZDZIAŁ 5 -->
+    <div id="ch5" class="content">
+        <p class="blood">ROZDZIAŁ 5 – FINAŁ NA WIŚLE</p>
+        <p>Wisła – mosty, brzegi, bulwary – wszystko zalane krwią i spermą.</p>
+        <p>Pagriś na środku mostu Poniatowskiego – pani Polonistka na kolanach – wszyscy w niej naraz, jej ciało już nie wytrzymuje, krew leje się strumieniem.</p>
+        <p>Pagriś rucha żeglarzy, wędkarzy, turystów na brzegu, biegaczy, rowerzystów – każdy, kogo napotka.</p>
+        <p>Rakun rzucony do wody – związany, tonie w spermie i krwi, Pagriś wbija mu 28 cm w gardło pod wodą – Rakun tonie i umiera po raz piąty.</p>
+        <p>Wszyscy siódemka dochodzą naraz – największa fontanna w historii – 15 litrów spermy zalewa Wisłę, woda czerwona od krwi.</p>
+        <p>Pagriś stoi na moście, czerwona kurtka ociekająca.</p>
+        <p>„Cały świat należy do IronAge. Pagriś – superbohater ruchania – król wszystkiego.”</p>
+        <p class="final">
+            PAGRIŚ KRÓLEM WSZYSTKIEGO<br>
+            RAKUN MARTWY NA ZAWSZE<br>
+            KONIEC.
+        </p>
+    </div>
+
+    <p class="disclaimer">
+        100% fikcja. Żadna z postaci ani wydarzeń nie ma związku z rzeczywistością.
+    </p>
+</div>
+
+<script>
+    function show(n) {
+        document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+        document.getElementById('ch'+n).classList.add('active');
+        document.querySelectorAll('.btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.btn')[n-1].classList.add('active');
+    }
+
+    function accept() {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('joke').style.display = 'flex';
+    }
+
+    function goToFanfik() {
+        document.getElementById('joke').style.display = 'none';
+        document.getElementById('main').classList.add('active');
+    }
+</script>
+
+</body>
+</html>
